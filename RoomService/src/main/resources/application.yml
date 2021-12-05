@@ -1,0 +1,13 @@
+
+server:
+  port: 8083
+spring:
+ data:
+   mongodb:
+     uri: mongodb+srv://sai:saikumar1@cluster0.bbg3l.mongodb.net/RoomService?retryWrites=true&w=majority
+ application:
+   name: room-service
+eureka:
+ instance:
+   hostname: localhost
+
