@@ -4,12 +4,13 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.client.RestTemplate;
 
-import com.Reservationservice.Models.Reservation;
-import com.Reservationservice.Models.ReservationList;
-import com.Reservationservice.Models.Room;
 import com.Reservationservice.Repository.ReservationRepo;
+import com.hotel.Reservationservice.Models.Reservation;
+import com.hotel.Reservationservice.Models.ReservationList;
+import com.hotel.Reservationservice.Models.Room;
 
 @Service
 public class ReservationServiceImpl implements ReservationService {
@@ -18,7 +19,7 @@ public class ReservationServiceImpl implements ReservationService {
 	
 	@Autowired
 	private RestTemplate restTmp;
-
+	@CrossOrigin ("http://localhost:4200")
 	@Override
 	public String bookRoom(Reservation res) {
 		Room room= restTmp.getForObject("http://localhost:8006/room-service/Room/getRoom/"+res.getRoomId(), Room.class);
@@ -45,7 +46,7 @@ public class ReservationServiceImpl implements ReservationService {
 	public Reservation updateRes(Reservation res) {
 		return repo.save(res);
 	}
-
+	@CrossOrigin ("http://localhost:4200")
 	@Override
 	public String deleteRes(int id) {
 		Optional<Reservation> res=repo.findById(id);
