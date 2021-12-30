@@ -15,21 +15,21 @@ public abstract class StaffService {
 	
 private StaffRepository staffrepository;
 	
-	public Staff addstaff( Staff staff)
+	public Staff saveStaff( Staff staff)
 	{
 		return staffrepository.save(staff);
 	}
-    public List<Staff> getstaffs()
+    public List<Staff> getStaffs()
     {
     List<Staff>staff=staffrepository.findAll();
     return staff;
     }
-  public Optional<Staff>getStaff(String id)
+  public Optional<Staff>getStaffs(String id)
   {
 	  return staffrepository.findById(id);
 	  
   }
-  public void deletestaff(Staff staff)
+  public void delete(Staff staff)
   {
 	  staffrepository.delete(staff);
 	  
