@@ -28,7 +28,7 @@ public class Reservation {
 	public int getCustId() {
 		return custId;
 	}
-	public void setCustId(int custId) {
+	public void setcustId(int custId) {
 		this.custId = custId;
 	}
 	public int getRoomId() {
@@ -55,10 +55,10 @@ public class Reservation {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public String getNoOfGuest() {
+	public String getnoOfGuest() {
 		return noOfGuest;
 	}
-	public void setNoOfGuest(String noOfGuest) {
+	public void setnoOfGuest(String noOfGuest) {
 		this.noOfGuest = noOfGuest;
 	}
 	public int getNoOfNight() {
